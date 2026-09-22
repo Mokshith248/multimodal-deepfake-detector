@@ -59,8 +59,9 @@ class DetectionHandler(BaseHTTPRequestHandler):
         self.end_headers()
 
     def do_GET(self):
+        path = urlparse(self.path).path
 
-        if self.path == "/":
+        if path == "/":
             self.send_json({
                 "message": "Multimodal Deepfake Detection API is running"
             })
