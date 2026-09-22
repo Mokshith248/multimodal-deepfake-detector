@@ -165,7 +165,7 @@ function App() {
 
   try {
     const response = await fetch(
-      `http://127.0.0.1:8000/predict/${mode}`,
+      `https://multimodal-deepfake-detector-q8kv.onrender.com/predict/${mode}`,
       {
         method: "POST",
         body: formData
