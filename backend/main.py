@@ -13,8 +13,8 @@ from inference.video_detector import detect_video
 from inference.audio_detector import detect_audio
 from inference.audiovisual_detector import detect_audiovisual
 
-HOST = "127.0.0.1"
-PORT = 8000
+HOST = "0.0.0.0"
+PORT = int(os.environ.get("PORT", "8000"))
 
 UPLOAD_DIR = os.path.join("backend", "uploads")
 os.makedirs(UPLOAD_DIR, exist_ok=True)
