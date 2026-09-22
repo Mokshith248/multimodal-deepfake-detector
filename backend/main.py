@@ -60,6 +60,7 @@ class DetectionHandler(BaseHTTPRequestHandler):
         self.end_headers()
 
     def do_GET(self):
+
         path = urlparse(self.path).path
 
         if path == "/":
@@ -68,7 +69,7 @@ class DetectionHandler(BaseHTTPRequestHandler):
             })
             return
 
-        if self.path == "/health":
+        if path == "/health":
             self.send_json({
                 "status": "healthy"
             })
@@ -77,7 +78,6 @@ class DetectionHandler(BaseHTTPRequestHandler):
         self.send_json({
             "error": "Endpoint not found"
         }, 404)
-
     def do_POST(self):
 
         routes = {
