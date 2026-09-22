@@ -1,4 +1,5 @@
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+import traceback
 from urllib.parse import urlparse
 import os
 import json
@@ -154,7 +155,8 @@ class DetectionHandler(BaseHTTPRequestHandler):
 
         except Exception as error:
 
-            print()
+            import traceback
+            traceback.print_exc()
             print("ERROR:", str(error))
 
             self.send_json({
