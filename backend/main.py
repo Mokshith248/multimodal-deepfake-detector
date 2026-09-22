@@ -1,4 +1,5 @@
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from urllib.parse import urlparse
 import os
 import json
 import uuid
